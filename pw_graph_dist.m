@@ -55,16 +55,19 @@ for i=1:num-1
             u=j;
         end
     end
-    %add w to S
-    v(u) = 1;
+
+    %if u ~= -1
+        %add w to S
+        v(u) = 1;
         
-    %update distance array
-    for k=1:num
-        if v(k)==0
-            if dist(k)>(dist(u)+AM(u,k))
-                dist(k)=dist(u)+AM(u,k);
+        %update distance array
+        for k=1:num
+            if v(k)==0
+                if dist(k)>(dist(u)+AM(u,k))
+                    dist(k)=dist(u)+AM(u,k);
+                end
             end
         end
-    end
+    %end
 end
 dv = dist;

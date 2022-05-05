@@ -59,8 +59,10 @@ function [K, Z, V1, V2] = specCorr3D(file1, file2, k)
 
     % Apply sign correction to eigenvectors
     disp('Applying sign correction');
+    tic;
     V2(:,1:k) = signCorrection(V1(:,1:k), V2(:,1:k));
     %dispEigs(F1, X1, V1, F2, X2, V2, k);
+    disp(sprintf('Time required for sign correction: %f secs.', toc));
 
     % Reoder eigenvectors
     disp('Reordering eigenvectors');
@@ -71,7 +73,9 @@ function [K, Z, V1, V2] = specCorr3D(file1, file2, k)
 
     % Compute Thin-Plate Spline matching
     disp('Computing TPS matching');
+    tic;
     [w d M V2(:,2:k)] = TPS(V1(:,2:k), V2(:,2:k), F1, F2);
+    disp(sprintf('Time required for TPS matching: %f secs.', toc));
 
     % Compose final similarity matrix
     Z = zeros(n1,n2);
@@ -83,6 +87,8 @@ function [K, Z, V1, V2] = specCorr3D(file1, file2, k)
     Z = sqrt(Z);
 
     % Compute improved matching
+    disp('Computing improved matching');
+    tic;
     for anum = 0:5
         [K junk junk cost] = computeImprovedMatching(Z, A1, A2, anum);
 
@@ -101,6 +107,7 @@ function [K, Z, V1, V2] = specCorr3D(file1, file2, k)
             axis off;    
         end
     end
+    disp(sprintf('Time required for improved matching: %f secs.', toc));
 
     % Show correspondence (new code)
     showCorrNew(F1, X1, F2, X2, A2, K);

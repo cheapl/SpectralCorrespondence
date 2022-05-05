@@ -44,18 +44,19 @@ function G = constructGeodesic(F, X)
     end
     A(find(A == 0)) = inf;
     A(find(A == -2)) = 0;
-    %A = zeros(n, n);    %-----Adjacency matrix according to Frank's specification
-    %for i = 1:n
-    %    A(i, i) = 0;
-    %    for j = i+1:n
-    %        if(adj(i, j) == 1)
-    %            A(i, j) = sqrt(sum((X(i, :) - X(j, :)).^2)); %-----Geodesic distance is same as euclidean distance
-    %        else
-    %            A(i, j) = inf;
-    %        end
-    %        A(j, i) = A(i, j);
-    %    end
-    %end
+
+%     A = zeros(n, n);    %-----Adjacency matrix according to Frank's specification
+%     for i = 1:n
+%         A(i, i) = 0;
+%         for j = i+1:n
+%             if(adj(i, j) == 1)
+%                 A(i, j) = sqrt(sum((X(i, :) - X(j, :)).^2)); %-----Geodesic distance is same as euclidean distance
+%             else
+%                 A(i, j) = inf;
+%             end
+%             A(j, i) = A(i, j);
+%         end
+%     end
     
     G = pw_graph_dist(A);    %-----Call Frank's Dijkstra's implementation
 
