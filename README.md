@@ -25,4 +25,4 @@ from python.spec_corr3d import spec_corr3d
 K, Z, V1, V2 = spec_corr3d('meshes/alien.smf', 'meshes/human.smf', k=5)
 ```
 
-Running `python/python/main.py` performs the same test and prints matrix shapes. Ensure that `numpy`, `scipy` and `matplotlib` are installed.
+Running `python/main.py` performs the same test and prints matrix shapes. Ensure that `numpy`, `scipy`, and `matplotlib` are installed.
