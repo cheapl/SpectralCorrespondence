@@ -36,7 +36,7 @@ def _update_transform(X, V, M, d, w, lam, dim, phi):
     V_aug = np.hstack([V, np.ones((K, 1))])
     phi_l = phi + lam * np.eye(K)
     A = np.block([[phi_l, V_aug], [V_aug.T, np.zeros((dim + 1, dim + 1))]])
-    b = np.vstack([Y, np.zeros((dim + 1, dim))])
+    b = np.vstack([Y_aug, np.zeros((dim + 1, dim + 1))])
     sol = np.linalg.lstsq(A, b, rcond=None)[0]
     w[:] = sol[:K]
     d[:] = sol[K:]
