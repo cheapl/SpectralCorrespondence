@@ -12,6 +12,7 @@ The description of the input and output parameters can be seen with
 "help specCorr3D" or referring to the file specCorr3D.m
 
 
+
 Python translation
 ------------------
 A full Python translation of the MATLAB functions is available in the
@@ -20,10 +21,13 @@ A full Python translation of the MATLAB functions is available in the
 
 Example usage from Python:
 
+
 .. code-block:: python
 
     from python.spec_corr3d import spec_corr3d
     K, Z, V1, V2 = spec_corr3d('meshes/alien.smf', 'meshes/human.smf', k=5)
 
+
 A convenience ``python/main.py`` module runs the same test when executed
 as a script.
+
