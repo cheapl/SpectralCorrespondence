@@ -13,7 +13,10 @@ else:
 
 
 def main():
-    K, Z, V1, V2 = spec_corr3d('../meshes/alien.smf', '../meshes/human.smf', k=5)
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    mesh1 = os.path.join(repo_root, 'meshes', 'alien.smf')
+    mesh2 = os.path.join(repo_root, 'meshes', 'human.smf')
+    K, Z, V1, V2 = spec_corr3d(mesh1, mesh2, k=5)
     print('K shape:', K.shape)
     print('Z shape:', Z.shape)
     print('V1 shape:', V1.shape)
