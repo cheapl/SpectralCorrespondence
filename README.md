@@ -21,7 +21,6 @@ A full Python translation of the MATLAB functions is available in the `python` f
 Example usage:
 
 ```python
-from python.spec_corr3d import spec_corr3d
 K, Z, V1, V2 = spec_corr3d('meshes/alien.smf', 'meshes/human.smf', k=5)
 ```
 
