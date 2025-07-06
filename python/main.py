@@ -9,7 +9,7 @@ else:
 
 
 def main():
-    K, Z, V1, V2 = spec_corr3d('meshes/alien.smf', 'meshes/human.smf', k=5)
+    K, Z, V1, V2 = spec_corr3d('../meshes/alien.smf', '../meshes/human.smf', k=5)
     print('K shape:', K.shape)
     print('Z shape:', Z.shape)
     print('V1 shape:', V1.shape)
