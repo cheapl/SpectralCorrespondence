@@ -1,4 +1,3 @@
-
 This file describes how to use the MATLAB code for "Robust 3D Shape
 Correspondence in the Spectral Domain".
 
@@ -16,15 +15,19 @@ The description of the input and output parameters can be seen with
 
 Python translation
 ------------------
-A partial Python implementation is available in the ``python`` folder.  The
-``spec_corr3d`` function replicates the MATLAB ``specCorr3D`` pipeline using
-NumPy and SciPy:
+A full Python translation of the MATLAB functions is available in the
+``python`` folder.  The ``spec_corr3d`` function mirrors the MATLAB
+``specCorr3D`` pipeline using NumPy and SciPy.
+
+Example usage from Python:
+
 
 .. code-block:: python
 
     from python.spec_corr3d import spec_corr3d
     K, Z, V1, V2 = spec_corr3d('meshes/alien.smf', 'meshes/human.smf', k=5)
 
-The Python version does not implement all MATLAB helper functions, but provides
-basic functionality for loading SMF files, computing geodesic distances,
-applying Gaussian kernels and performing a simple matching.
+
+A convenience ``python/main.py`` module runs the same test when executed
+as a script.
+

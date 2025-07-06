@@ -3,4 +3,13 @@ from .apply_gaussian import apply_gaussian
 from .compute_matching import compute_matching
 from .compute_pairwise import compute_pairwise
 from .construct_geodesic import construct_geodesic
+from .compute_improved_matching import compute_improved_matching
+from .eig_sorted import eig_sorted
+from .exhaustive_reorder import exhaustive_reorder
+from .tps import tps
+from .sign_correction import sign_correction
+from .select_anchors import select_anchors
+from .show_corr_new import show_corr_new
+from .pw_graph_dist import pw_graph_dist
+from .mesh_show import mesh_show
 from .spec_corr3d import spec_corr3d
